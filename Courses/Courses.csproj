@@ -52,6 +52,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mockups\MockupSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupSignIn.Designer.cs">
+      <DependentUpon>MockupSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\MockupSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mockups\MockupSignUp.Designer.cs">
+      <DependentUpon>MockupSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mockups\MockupStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Mockups\MockupSignIn.resx">
+      <DependentUpon>MockupSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockups\MockupSignUp.resx">
+      <DependentUpon>MockupSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mockups\MockupStart.resx">
       <DependentUpon>MockupStart.cs</DependentUpon>
     </EmbeddedResource>

@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lnlsignIn = new System.Windows.Forms.LinkLabel();
+            this.lbltext = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,10 +46,6 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +56,10 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.lnlsignIn);
+            this.panel2.Controls.Add(this.lbltext);
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.btnSignUp);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.textBox1);
@@ -70,47 +70,83 @@
             this.panel2.Size = new System.Drawing.Size(1344, 641);
             this.panel2.TabIndex = 4;
             // 
-            // linkLabel1
+            // textBox3
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(758, 558);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(65, 23);
-            this.linkLabel1.TabIndex = 9;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "sign in!";
+            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(434, 254);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(412, 31);
+            this.textBox3.TabIndex = 13;
             // 
-            // label7
+            // label2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(430, 558);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(332, 23);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Already have a user account? Click here to";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(429, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 30);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Last Name";
             // 
-            // button2
+            // textBox4
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(656, 480);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(434, 159);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(412, 31);
+            this.textBox4.TabIndex = 11;
             // 
-            // button1
+            // label3
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(434, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(429, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 30);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "First Name";
+            // 
+            // lnlsignIn
+            // 
+            this.lnlsignIn.AutoSize = true;
+            this.lnlsignIn.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnlsignIn.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnlsignIn.Location = new System.Drawing.Point(758, 566);
+            this.lnlsignIn.Name = "lnlsignIn";
+            this.lnlsignIn.Size = new System.Drawing.Size(65, 23);
+            this.lnlsignIn.TabIndex = 9;
+            this.lnlsignIn.TabStop = true;
+            this.lnlsignIn.Text = "sign in!";
+            // 
+            // lbltext
+            // 
+            this.lbltext.AutoSize = true;
+            this.lbltext.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltext.Location = new System.Drawing.Point(430, 566);
+            this.lbltext.Name = "lbltext";
+            this.lbltext.Size = new System.Drawing.Size(332, 23);
+            this.lbltext.TabIndex = 8;
+            this.lbltext.Text = "Already have a user account? Click here to";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(656, 488);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(190, 45);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Location = new System.Drawing.Point(434, 488);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(190, 45);
+            this.btnSignUp.TabIndex = 6;
+            this.btnSignUp.Text = "Sign In";
+            this.btnSignUp.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -202,42 +238,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Courses";
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(434, 254);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(412, 31);
-            this.textBox3.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(429, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 30);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Last Name";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(434, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(412, 31);
-            this.textBox4.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(429, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 30);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "First Name";
-            // 
             // MockupSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,10 +262,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel lnlsignIn;
+        private System.Windows.Forms.Label lbltext;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;

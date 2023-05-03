@@ -73,6 +73,9 @@
     <Compile Include="Panel-uri\pnlSignIn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Panel-uri\pnlSignUp.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

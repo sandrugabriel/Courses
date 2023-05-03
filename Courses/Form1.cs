@@ -20,5 +20,26 @@ namespace Courses
             this.Controls.Add(new pnlSignIn(this));
 
         }
+
+        public void removepnl(string text)
+        {
+
+            Control control = null;
+
+            foreach (Control c in this.Controls)
+            {
+
+                if(c.Name.Equals(text)) { 
+                
+                control = c;
+                    break;
+                }
+
+            }
+
+            this.Controls.Remove(control);
+        }
+
+
     }
 }

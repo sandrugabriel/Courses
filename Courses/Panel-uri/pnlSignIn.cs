@@ -110,6 +110,16 @@ namespace Courses.Panel_uri
             this.lnlsignUp.Font = new Font("Microsoft YaHei UI Light", 12);
             this.lnlsignUp.Text = "sign up!";
             this.lnlsignUp.LinkBehavior = LinkBehavior.NeverUnderline;
+            this.lnlsignUp.Click += new EventHandler(lnlsignUp_Click);
+
+        }
+
+        private void lnlsignUp_Click(object sender, EventArgs e)
+        {
+
+            this.form.removepnl("pnlSignIn");
+            this.form.Controls.Add(new pnlSignUp(this.form));
+
 
         }
 

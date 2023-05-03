@@ -70,6 +70,9 @@
     <Compile Include="Mockups\MockupStart.Designer.cs">
       <DependentUpon>MockupStart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel-uri\pnlLogin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panel-uri\pnlSignIn.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -42,12 +42,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlCor = new System.Windows.Forms.Panel();
+            this.linksignin = new System.Windows.Forms.LinkLabel();
+            this.lnlSINGUP = new System.Windows.Forms.LinkLabel();
+            this.lblTITLU = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlCor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -140,13 +140,28 @@
             // 
             // btnSignUp
             // 
+            this.btnSignUp.AccessibleRole = System.Windows.Forms.AccessibleRole.Sound;
+            this.btnSignUp.AllowDrop = true;
+            this.btnSignUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSignUp.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSignUp.CausesValidation = false;
+            this.btnSignUp.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnSignUp.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnSignUp.FlatAppearance.BorderSize = 5000;
+            this.btnSignUp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnSignUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSignUp.Location = new System.Drawing.Point(434, 488);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(190, 45);
             this.btnSignUp.TabIndex = 6;
             this.btnSignUp.Text = "Sign In";
-            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSignUp.UseMnemonic = false;
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.UseWaitCursor = true;
             // 
             // textBox2
             // 
@@ -194,49 +209,54 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Sign Up";
             // 
-            // panel1
+            // pnlCor
             // 
-            this.panel1.Controls.Add(this.linkLabel3);
-            this.panel1.Controls.Add(this.linkLabel2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-1, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1360, 93);
-            this.panel1.TabIndex = 3;
+            this.pnlCor.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlCor.Controls.Add(this.linksignin);
+            this.pnlCor.Controls.Add(this.lnlSINGUP);
+            this.pnlCor.Controls.Add(this.lblTITLU);
+            this.pnlCor.Location = new System.Drawing.Point(-1, 3);
+            this.pnlCor.Name = "pnlCor";
+            this.pnlCor.Size = new System.Drawing.Size(1360, 93);
+            this.pnlCor.TabIndex = 3;
             // 
-            // linkLabel3
+            // linksignin
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.Location = new System.Drawing.Point(1226, 34);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(83, 30);
-            this.linkLabel3.TabIndex = 4;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Sign In";
+            this.linksignin.AutoSize = true;
+            this.linksignin.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linksignin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linksignin.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.linksignin.Location = new System.Drawing.Point(1226, 34);
+            this.linksignin.Name = "linksignin";
+            this.linksignin.Size = new System.Drawing.Size(83, 30);
+            this.linksignin.TabIndex = 4;
+            this.linksignin.TabStop = true;
+            this.linksignin.Text = "Sign In";
             // 
-            // linkLabel2
+            // lnlSINGUP
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.Location = new System.Drawing.Point(1107, 34);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(94, 30);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Sign Up";
+            this.lnlSINGUP.ActiveLinkColor = System.Drawing.Color.SkyBlue;
+            this.lnlSINGUP.AutoSize = true;
+            this.lnlSINGUP.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnlSINGUP.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnlSINGUP.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lnlSINGUP.Location = new System.Drawing.Point(1107, 34);
+            this.lnlSINGUP.Name = "lnlSINGUP";
+            this.lnlSINGUP.Size = new System.Drawing.Size(94, 30);
+            this.lnlSINGUP.TabIndex = 3;
+            this.lnlSINGUP.TabStop = true;
+            this.lnlSINGUP.Text = "Sign Up";
             // 
-            // label1
+            // lblTITLU
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Courses";
+            this.lblTITLU.AutoSize = true;
+            this.lblTITLU.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTITLU.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTITLU.Location = new System.Drawing.Point(24, 29);
+            this.lblTITLU.Name = "lblTITLU";
+            this.lblTITLU.Size = new System.Drawing.Size(128, 37);
+            this.lblTITLU.TabIndex = 0;
+            this.lblTITLU.Text = "Courses";
             // 
             // MockupSignUp
             // 
@@ -244,13 +264,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 745);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCor);
             this.Name = "MockupSignUp";
             this.Text = "MockupSignUp";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCor.ResumeLayout(false);
+            this.pnlCor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -271,9 +291,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlCor;
+        private System.Windows.Forms.LinkLabel linksignin;
+        private System.Windows.Forms.LinkLabel lnlSINGUP;
+        private System.Windows.Forms.Label lblTITLU;
     }
 }

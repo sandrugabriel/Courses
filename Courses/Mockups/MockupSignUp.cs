@@ -15,6 +15,8 @@ namespace Courses.Mockups
         public MockupSignUp()
         {
             InitializeComponent();
+            this.btnSignUp.FlatAppearance.BorderColor = Color.Red;
+          
         }
     }
 }

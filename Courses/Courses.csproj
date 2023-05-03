@@ -72,6 +72,9 @@
       <DependentUpon>MockupStart.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Panel-uri\pnlCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panel-uri\pnlLogin.cs">
       <SubType>Component</SubType>
     </Compile>

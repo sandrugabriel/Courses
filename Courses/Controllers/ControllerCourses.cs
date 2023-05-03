@@ -43,6 +43,18 @@ namespace Courses.Controllers
             streamReader.Close();
         }
 
+        public string namById(int id)
+        {
+            string name = null;
+
+            for(int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].getid() == id) return name;
+            }
+
+
+            return null;
+        }
 
     }
 }

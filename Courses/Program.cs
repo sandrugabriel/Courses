@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Courses.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,10 @@ namespace Courses
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+          //  ControllerCourses controllerCourses = new ControllerCourses();
+         //   MessageBox.Show(controllerCourses.stergere(2));
+          //  controllerCourses.deleteCourese(2);
         }
     }
 }

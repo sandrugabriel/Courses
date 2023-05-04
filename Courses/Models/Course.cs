@@ -45,6 +45,11 @@ namespace Courses.Models
             return id;
         }
 
+        public int getid_Client()
+        {
+            return id_Client;
+        }
+
         public string getName()
         {
             return name;

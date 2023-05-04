@@ -76,6 +76,7 @@
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(26, 342);
+            this.txtDescription.Multiline = false;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(629, 382);
             this.txtDescription.TabIndex = 3;

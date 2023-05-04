@@ -158,6 +158,7 @@ namespace Courses.Panel_uri
                 this.form.removepnl("pnlLogin");
                 this.form.Controls.Add(pnlLogin);    
                 this.form.removepnl("pnlSignIn");
+                this.pnlLogin.id = id;
                 this.form.Controls.Add(new pnlHome(form,id));
 
             }

@@ -46,17 +46,12 @@
             this.linksignin = new System.Windows.Forms.LinkLabel();
             this.lnlSINGUP = new System.Windows.Forms.LinkLabel();
             this.lblTITLU = new System.Windows.Forms.Label();
-            this.pnlCourse = new System.Windows.Forms.Panel();
-            this.lblname = new System.Windows.Forms.Label();
-            this.lblCourse = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.pnlCor.SuspendLayout();
-            this.pnlCourse.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pnlCourse);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox4);
@@ -263,38 +258,6 @@
             this.lblTITLU.TabIndex = 0;
             this.lblTITLU.Text = "Courses";
             // 
-            // pnlCourse
-            // 
-            this.pnlCourse.BackColor = System.Drawing.Color.SkyBlue;
-            this.pnlCourse.Controls.Add(this.lblCourse);
-            this.pnlCourse.Controls.Add(this.lblname);
-            this.pnlCourse.Location = new System.Drawing.Point(25, 38);
-            this.pnlCourse.Name = "pnlCourse";
-            this.pnlCourse.Size = new System.Drawing.Size(370, 142);
-            this.pnlCourse.TabIndex = 14;
-            // 
-            // lblname
-            // 
-            this.lblname.AutoSize = true;
-            this.lblname.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblname.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblname.Location = new System.Drawing.Point(11, 63);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(286, 31);
-            this.lblname.TabIndex = 0;
-            this.lblname.Text = "Build a Basic Bookcase";
-            // 
-            // lblCourse
-            // 
-            this.lblCourse.AutoSize = true;
-            this.lblCourse.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCourse.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCourse.Location = new System.Drawing.Point(13, 14);
-            this.lblCourse.Name = "lblCourse";
-            this.lblCourse.Size = new System.Drawing.Size(67, 24);
-            this.lblCourse.TabIndex = 1;
-            this.lblCourse.Text = "Course";
-            // 
             // MockupSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,8 +271,6 @@
             this.panel2.PerformLayout();
             this.pnlCor.ResumeLayout(false);
             this.pnlCor.PerformLayout();
-            this.pnlCourse.ResumeLayout(false);
-            this.pnlCourse.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,8 +295,5 @@
         private System.Windows.Forms.LinkLabel linksignin;
         private System.Windows.Forms.LinkLabel lnlSINGUP;
         private System.Windows.Forms.Label lblTITLU;
-        private System.Windows.Forms.Panel pnlCourse;
-        private System.Windows.Forms.Label lblCourse;
-        private System.Windows.Forms.Label lblname;
     }
 }

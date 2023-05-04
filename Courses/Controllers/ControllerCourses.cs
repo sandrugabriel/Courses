@@ -56,5 +56,11 @@ namespace Courses.Controllers
             return null;
         }
 
+        public List<Course> getcourses()
+        {
+
+            return courses;
+        }
+
     }
 }

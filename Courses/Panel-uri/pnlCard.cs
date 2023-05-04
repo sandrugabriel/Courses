@@ -1,4 +1,5 @@
 ﻿using Courses.Controllers;
+using Courses.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +11,21 @@ namespace Courses.Panel_uri
 {
     internal class pnlCard:Panel
     {
-        private int id;
+        Course course;
         Form1 form;
 
         Label lblCourse;
         Label lblname;
 
-        private string name;
-
         ControllerCourses controllerCourses;
 
-        public pnlCard(Form1 form1, int id1)
+        public pnlCard(Form1 form1, Course course1)
         {
             form = form1;
-            this.id = id1;
+            this.course = course1;
             controllerCourses = new ControllerCourses();
 
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.Location = new System.Drawing.Point(25, 38);
             this.Name = "pnlCourse";
             this.Size = new System.Drawing.Size(370, 142);
 
@@ -37,14 +35,12 @@ namespace Courses.Panel_uri
             this.Controls.Add(this.lblCourse);
             this.Controls.Add(this.lblname);
 
-            name = controllerCourses.namById(id);
-
             // lblname
             this.lblname.AutoSize = true;
             this.lblname.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblname.ForeColor = System.Drawing.SystemColors.Control;
             this.lblname.Location = new System.Drawing.Point(11, 63);
-            this.lblname.Text = name;
+            this.lblname.Text = course.getName();
              
             // lblCourse
             this.lblCourse.AutoSize = true;

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Courses.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Courses.Panel_uri
 {
@@ -21,15 +23,23 @@ namespace Courses.Panel_uri
         Button btnSignIn;
         Button btnCancel;
 
-        
+        List<string> erori;
+        ControllerClient controllerClients;
         
         Form1 form;
+
+        pnlLogin pnlLogin;
 
         public pnlSignIn(Form1 form1)
         {
 
             form = form1;
+            erori = new List<string>();
+            pnlLogin = new pnlLogin(form);
+            controllerClients = new ControllerClient();
             this.form.Size = new System.Drawing.Size(1205,758);
+            this.form.MinimumSize = new Size(1205, 758);
+            this.form.MaximumSize = new Size(1205, 758);
             this.Size = new System.Drawing.Size(1200, 625);
             this.Name = "pnlSignIn";
             this.Location = new System.Drawing.Point(0, 95); 
@@ -126,21 +136,71 @@ namespace Courses.Panel_uri
         private void btnSignIn_Click(object sender, EventArgs e)
         {
 
+            errors();
+            if (erori.Count > 0)
+            {
+
+                for(int i = 0; i < erori.Count; i++)
+                {
+                    MessageBox.Show(erori[i],"Errors",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+
+                int id = controllerClients.idByemailPass(txtpassword.Text, txtemail.Text);
+                string name = controllerClients.namebyid(id);
+
+                this.pnlLogin.lblName.Text = "Welcome, "+name+"!";
+                this.pnlLogin.lblName.Visible = true;
+                this.pnlLogin.linkSignIn.Visible = false;
+                this.form.removepnl("pnlLogin");
+                this.form.Controls.Add(pnlLogin);    
+                this.form.removepnl("pnlSignIn");
+                this.form.Controls.Add(new pnlHome(form,id));
+
+            }
 
 
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        { 
-        
-        
-        
+        {
+
+
+            this.form.removepnl("pnlSignIn");
+            this.form.Controls.Add(new pnlHome(this.form,-1));
         
         
         }
 
+        private void errors()
+        {
 
+            erori.Clear();
+
+            if (txtemail.Text.Equals(""))
+            {
+                erori.Add("You have not entered the email");
+            }
+
+            if (txtpassword.Text.Equals(""))
+            {
+                erori.Add("You have not entered the password");
+            }
+
+            if (erori.Count == 0)
+            {
+                if (controllerClients.verification(txtpassword.Text, txtemail.Text) == false)
+                {
+                    erori.Add("You have not entered password / email incorrectly");
+                }
+            }
+
+
+        }
 
 
 

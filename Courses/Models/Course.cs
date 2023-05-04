@@ -11,14 +11,16 @@ namespace Courses.Models
     {
 
         private int id;
+        private int id_Client;
         private string name;
         private string description;
         private string time;
         private string materials;
 
-        public Course(int id, string name, string description, string time, string materials)
+        public Course(int id, int id_Client, string name, string description, string time, string materials)
         {
             this.id = id;
+            this.id_Client = id_Client;
             this.name = name;
             this.description = description;
             this.time = time;
@@ -30,10 +32,11 @@ namespace Courses.Models
             string[] prop = text.Split('⁂');
             
             this.id = int.Parse(prop[0]);
-            this.name = prop[1];
-            this.description = prop[2];
-            this.time = prop[3];
-            this.materials = prop[4];
+            this.id_Client = int.Parse(prop[1]);
+            this.name = prop[2];
+            this.description = prop[3];
+            this.time = prop[4];
+            this.materials = prop[5];
 
         }
 

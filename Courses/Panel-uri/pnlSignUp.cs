@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 
 namespace Courses.Panel_uri
@@ -43,10 +44,10 @@ namespace Courses.Panel_uri
             controllerClient = new ControllerClient();
             pnlLogin = new pnlLogin(form);
 
-            this.form.Size = new System.Drawing.Size(1205, 758);
+            this.form.Size = new System.Drawing.Size(1700, 900);
             this.Size = new System.Drawing.Size(1200, 625);
             this.Name = "pnlSignUp";
-            this.Location = new System.Drawing.Point(0, 95);
+            this.Location = new System.Drawing.Point(120, 95);
 
             //New
             this.lblTitlu = new Label();
@@ -238,10 +239,12 @@ namespace Courses.Panel_uri
                 this.pnlLogin.lblName.Text = name;
                 this.pnlLogin.lblName.Visible = true;
                 this.pnlLogin.linkSignIn.Visible = false;
+                this.pnlLogin.linkSignUp.Visible = false;
+                this.pnlLogin.linkSignOut.Visible = true;
                 this.form.removepnl("pnlLogin");
                 this.form.Controls.Add(pnlLogin);
                 this.form.removepnl("pnlSignUp");
-                this.pnlLogin.id = id;
+                this.form.id = id;
                 this.form.Controls.Add(new pnlHome(form,id));
 
             }

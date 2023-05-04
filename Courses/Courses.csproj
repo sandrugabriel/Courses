@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Panel-uri\pnlAddCourse.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panel-uri\pnlCard.cs">
       <SubType>Component</SubType>
     </Compile>

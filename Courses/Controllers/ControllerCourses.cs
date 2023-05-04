@@ -62,7 +62,6 @@ namespace Courses.Controllers
             return courses;
         }
 
-
         public int pozID(int id)
         {
 
@@ -80,19 +79,15 @@ namespace Courses.Controllers
         public string stergere(int id)
         {
             string t = "";
-            int p = pozID(id);
-            for (int i = p; i < courses.Count - 1; i++)
-            {
-                courses[i] = courses[i + 1];
-            }
-
-            for (int i = 0; i < courses.Count; i++)
+            
+            for (int i = 0; i < courses.Count-1; i++)
             {
                 t += courses[i].toSave() + "\n";
             }
 
 
             return t;
+            
         }
 
         public void deleteCourese(int id)
@@ -104,6 +99,48 @@ namespace Courses.Controllers
             stream.Write(this.stergere(id));
 
             stream.Close();
+        }
+
+        public void addCourse(string textul)
+        {
+            Course sters = courses[courses.Count - 1];
+            deleteCourese(2);
+            string text = textul;
+            string path = Application.StartupPath + @"/data/courses.txt";
+            File.AppendAllText(path, text + "\n");
+            File.AppendAllText(path, sters.toSave() + "\n");
+
+
+        }
+
+        public Course getById(int id)
+        {
+
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (id == courses[i].getid())
+                {
+                    return courses[i];
+                }
+            }
+
+            return null;
+        }
+
+        public int generareId()
+        {
+
+            Random random = new Random();
+
+            int id = random.Next();
+            while(this.getById(id) != null)
+            {
+
+                id = random.Next();
+
+            }
+
+            return id;
         }
 
 

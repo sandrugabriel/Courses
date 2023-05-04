@@ -30,12 +30,10 @@ namespace Courses.Panel_uri
             id = id1;
             courses = new List<Course>();
             controllerCourses = new ControllerCourses();
-
-            this.form.Size = new System.Drawing.Size(1205, 758);
-            this.form.MinimumSize = new Size(1205, 758);
-            this.form.MaximumSize = new Size(1205, 758);
+            this.form.MinimumSize = new Size(1700,1000);
+            this.form.MaximumSize = new Size(1700,1000);
             this.Size = new System.Drawing.Size(1205, 758);
-            this.Location = new System.Drawing.Point(5, 100);
+            this.Location = new System.Drawing.Point(120, 100);
             this.Name = "pnlHome";
 
             courses = controllerCourses.getcourses();
@@ -61,7 +59,7 @@ namespace Courses.Panel_uri
 
                 if (ct % nrCollums == 0)
                 {
-                    x = 55;
+                    x = 10;
                     y += 210;
                 }
                 if (y > this.Height)

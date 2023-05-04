@@ -19,11 +19,15 @@ namespace Courses.Panel_uri
 
         ControllerCourses controllerCourses;
 
+        pnlLogin pnlLogin;
+
         public pnlCard(Form1 form1, Course course1)
         {
             form = form1;
             this.course = course1;
             controllerCourses = new ControllerCourses();
+
+            pnlLogin = new pnlLogin(form);
 
             this.Name = "pnlCourse";
             this.Size = new System.Drawing.Size(350, 142);
@@ -71,13 +75,21 @@ namespace Courses.Panel_uri
             this.form.removepnl("pnlHome");
             if (course.getid() == 2)
             {
-               //
+                if (this.pnlLogin.id == 0)
+                {
+                    MessageBox.Show("You are not logged in!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    this.form.Controls.Add(new pnlSignIn(form));
+                }
+                else
+                {
+                    this.form.Controls.Add(new pnlAddCourse(form, this.pnlLogin.id));
+                    
+                }
             }
             else
             {
-                
+                this.form.Controls.Add(new pnlView(course, form));
             }
-            this.form.Controls.Add(new pnlView(course, form));
 
 
         }

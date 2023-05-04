@@ -13,13 +13,17 @@ namespace Courses
 {
     public partial class Form1 : Form
     {
+        public int id;
         public Form1()
         {
             InitializeComponent();
+            id = 0;
+            this.Size = new System.Drawing.Size(1700, 900);
+            this.MinimumSize = new Size(1700, 900);
+            this.MaximumSize = new Size(1700, 900);
 
             this.Controls.Add(new pnlHome(this,-1));
             this.Controls.Add(new pnlLogin(this));
-
         }
 
         public void removepnl(string text)

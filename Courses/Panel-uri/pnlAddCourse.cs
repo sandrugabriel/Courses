@@ -2,7 +2,6 @@
 using Courses.Models;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +9,12 @@ using System.Windows.Forms;
 
 namespace Courses.Panel_uri
 {
-    internal class pnlView : Panel
+    internal class pnlAddCourse:Panel
     {
 
+
         Label lblCourse;
-        Label lblName;
+        TextBox txtName;
         Label lblby;
         RichTextBox txtDescription;
         Label lbldescription;
@@ -22,8 +22,7 @@ namespace Courses.Panel_uri
         TextBox txtTime;
         Label lblmaterials;
         RichTextBox txtMaterials;
-        Button btnDelete;
-        Button btnUpdate;
+        Button btnAdd;
         Button btnReturn;
 
         Form1 form;
@@ -35,27 +34,23 @@ namespace Courses.Panel_uri
 
         Label lblvisibe;
 
-        Course course;
+        private int id_Client;
 
-        public pnlView(Course course1, Form1 form1)
+        public pnlAddCourse(Form1 form1, int id)
         {
-            course = course1;
             form = form1;
-            // this.form.MinimumSize = new Size(1187, 882);
-            this.form.StartPosition = FormStartPosition.CenterParent;
-            //this.form.MaximizeSize = new Size();
-
+            id_Client = id;
             controllerClient = new ControllerClient();
             controllerCourses = new ControllerCourses();
             pnlLogin = new pnlLogin(form);
 
             this.Location = new System.Drawing.Point(120, 95);
             this.Size = new System.Drawing.Size(1387, 762);
-            this.Name = "pnlView";
+            this.Name = "pnlAddCourse";
             this.AutoScroll = true;
 
             this.lblCourse = new Label();
-            this.lblName = new Label();
+            this.txtName = new TextBox();
             this.lblby = new Label();
             this.txtDescription = new RichTextBox();
             this.lbldescription = new Label();
@@ -63,14 +58,12 @@ namespace Courses.Panel_uri
             this.txtTime = new TextBox();
             this.lblmaterials = new Label();
             this.txtMaterials = new RichTextBox();
-            this.btnUpdate = new Button();
-            this.btnDelete = new Button();
+            this.btnAdd = new Button();
             this.btnReturn = new Button();
             this.lblvisibe = new Label();
 
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtMaterials);
             this.Controls.Add(this.lblmaterials);
             this.Controls.Add(this.txtTime);
@@ -78,7 +71,7 @@ namespace Courses.Panel_uri
             this.Controls.Add(this.lbldescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblby);
-            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblCourse);
             this.Controls.Add(this.lblvisibe);
 
@@ -93,25 +86,25 @@ namespace Courses.Panel_uri
             this.lblCourse.Location = new System.Drawing.Point(31, 116);
             this.lblCourse.Text = "Course";
 
-            // lblName
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.lblName.Location = new System.Drawing.Point(54, 152);
-            this.lblName.Text = course.getName();
+            // txtName
+            this.txtName.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtName.Location = new System.Drawing.Point(54, 152);
+            this.txtName.Size = new System.Drawing.Size(268, 34);
+            this.txtName.Text = "";
+            this.txtName.Multiline = false;
 
             // lblby
             this.lblby.AutoSize = true;
             this.lblby.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular);
             this.lblby.Location = new System.Drawing.Point(119, 199);
-            this.lblby.Text = "By " + controllerClient.namebyid(course.getid_Client());
+            this.lblby.Text = "By " + controllerClient.namebyid(pnlLogin.id);
 
             // txtDescription
             this.txtDescription.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
             this.txtDescription.Location = new System.Drawing.Point(26, 342);
             this.txtDescription.Size = new System.Drawing.Size(529, 302);
-            this.txtDescription.Text = course.getDescription();
-            this.txtDescription.ReadOnly = true;
-            
+            this.txtDescription.Text = "";
+            this.txtDescription.Multiline = false;
 
             // lbldescription
             this.lbldescription.AutoSize = true;
@@ -129,8 +122,8 @@ namespace Courses.Panel_uri
             this.txtTime.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular);
             this.txtTime.Location = new System.Drawing.Point(743, 229);
             this.txtTime.Size = new System.Drawing.Size(268, 34);
-            this.txtTime.Text = course.getTime();
-            this.txtTime.ReadOnly = true;
+            this.txtTime.Text = "";
+            this.txtTime.Multiline = false;
 
             // lblmaterials
             this.lblmaterials.AutoSize = true;
@@ -142,27 +135,20 @@ namespace Courses.Panel_uri
             this.txtMaterials.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
             this.txtMaterials.Location = new System.Drawing.Point(743, 342);
             this.txtMaterials.Size = new System.Drawing.Size(322, 302);
-            this.txtMaterials.Text = course.getMaterials();
-            this.txtMaterials.ReadOnly = true;
+            this.txtMaterials.Text = "";
+            this.txtMaterials.Multiline = false;
 
             // btnUpdate
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
-            this.btnUpdate.Location = new System.Drawing.Point(26, 24);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(161, 55);
-            this.btnUpdate.Text = "Update Course";
-            this.btnUpdate.Click += new EventHandler(btnUpdate_Click);
-
-            // btnDelete
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
-            this.btnDelete.Location = new System.Drawing.Point(224, 24);
-            this.btnDelete.Size = new System.Drawing.Size(161, 55);
-            this.btnDelete.Text = "Delete Course";
-            this.btnDelete.Click += new EventHandler(btnDelete_Click);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
+            this.btnAdd.Location = new System.Drawing.Point(26, 24);
+            this.btnAdd.Name = "btnUpdate";
+            this.btnAdd.Size = new System.Drawing.Size(161, 55);
+            this.btnAdd.Text = "Add Course";
+            this.btnAdd.Click += new EventHandler(btnAdd_Click);
 
             // btnReturn
             this.btnReturn.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
-            this.btnReturn.Location = new System.Drawing.Point(421, 24);
+            this.btnReturn.Location = new System.Drawing.Point(224, 24);
             this.btnReturn.Size = new System.Drawing.Size(161, 55);
             this.btnReturn.Text = "Return List";
             this.btnReturn.Click += new EventHandler(btnReturn_Click);
@@ -171,44 +157,31 @@ namespace Courses.Panel_uri
 
 
         }
-        
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
 
             this.form.Controls.Add(new pnlHome(form, pnlLogin.id));
-            this.form.removepnl("pnlView");
+            this.form.removepnl("pnlAddCourse");
 
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (course.getid() == pnlLogin.id)
-            {
+            string name = txtName.Text;
+            string description = txtDescription.Text;
+            string time = txtTime.Text;
+            string materials = txtMaterials.Text;
+            int id = controllerCourses.generareId();
+            int idClient = id_Client;
+            // ⁂
+            string textul = id.ToString() + "⁂" + idClient.ToString() + "⁂" + name + "⁂" + description + "⁂" + time + "⁂" + materials;
 
-            }
-            else
-            {
-                MessageBox.Show("You do not have permission to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-
-            if (course.getid() == pnlLogin.id)
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("You do not have permission to delete", "Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-            }
-
+            controllerCourses.addCourse(textul);
+            this.form.removepnl("pnlAddCourse");
+            this.form.Controls.Add(new pnlHome(form, form.id));
 
         }
 

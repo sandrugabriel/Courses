@@ -34,6 +34,7 @@ namespace Courses.Panel_uri
 
         pnlLogin pnlLogin;
 
+
         public pnlSignUp(Form1 form1)
         {
 
@@ -240,6 +241,7 @@ namespace Courses.Panel_uri
                 this.form.removepnl("pnlLogin");
                 this.form.Controls.Add(pnlLogin);
                 this.form.removepnl("pnlSignUp");
+                this.pnlLogin.id = id;
                 this.form.Controls.Add(new pnlHome(form,id));
 
             }

@@ -48,7 +48,7 @@ namespace Courses.Panel_uri
 
             this.Controls.Clear();
 
-            int x = 53, y = 43, ct = 0;
+            int x = 10, y = 43, ct = 0;
 
             foreach (Course course in courses)
             {
@@ -57,7 +57,7 @@ namespace Courses.Panel_uri
                 pnlcard.Location = new System.Drawing.Point(x, y);
                 this.Controls.Add(pnlcard);
 
-                x += 200;
+                x += 400;
 
                 if (ct % nrCollums == 0)
                 {

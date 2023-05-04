@@ -62,5 +62,50 @@ namespace Courses.Controllers
             return courses;
         }
 
+
+        public int pozID(int id)
+        {
+
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].getid() == id)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        public string stergere(int id)
+        {
+            string t = "";
+            int p = pozID(id);
+            for (int i = p; i < courses.Count - 1; i++)
+            {
+                courses[i] = courses[i + 1];
+            }
+
+            for (int i = 0; i < courses.Count; i++)
+            {
+                t += courses[i].toSave() + "\n";
+            }
+
+
+            return t;
+        }
+
+        public void deleteCourese(int id)
+        {
+
+            string path = Application.StartupPath + @"/data/courses.txt";
+            StreamWriter stream = new StreamWriter(path);
+
+            stream.Write(this.stergere(id));
+
+            stream.Close();
+        }
+
+
     }
 }

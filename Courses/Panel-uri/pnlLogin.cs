@@ -18,10 +18,12 @@ namespace Courses.Panel_uri
         LinkLabel linkSignUp;
         public LinkLabel linkSignIn;
 
+        public int id;
+
         public pnlLogin(Form1 form1) { 
         
             form = form1;
-
+            id = -1;
             // pnlLogin
             this.Location = new System.Drawing.Point(-1, 3);
             this.Name = "pnlLogin";
@@ -80,6 +82,7 @@ namespace Courses.Panel_uri
         {
 
             this.form.removepnl("pnlSignUp");
+            this.form.removepnl("pnlView");
             this.form.removepnl("pnlSignIn");
             this.form.removepnl("pnlHome");
             this.form.Controls.Add(new pnlSignIn(form));
@@ -91,6 +94,7 @@ namespace Courses.Panel_uri
 
             this.form.removepnl("pnlSignIn");
             this.form.removepnl("pnlSignUp");
+            this.form.removepnl("pnlView");
             this.form.removepnl("pnlHome");
             this.form.Controls.Add(new pnlSignUp(form));
 

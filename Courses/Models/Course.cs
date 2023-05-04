@@ -65,5 +65,10 @@ namespace Courses.Models
             return materials;
         }
 
+        public string toSave()
+        {
+            return id.ToString() + "⁂" + id_Client.ToString() + "⁂" + name + "⁂" + description + "⁂" + time + "⁂" + materials;
+        }
+
     }
 }

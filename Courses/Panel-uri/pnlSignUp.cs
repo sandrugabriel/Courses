@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Courses.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Courses.Panel_uri
 {
@@ -27,11 +29,18 @@ namespace Courses.Panel_uri
         Button btnSignUp;
         Button btnCancel;
 
+        List<string> erori;
+        ControllerClient controllerClient;
+
+        pnlLogin pnlLogin;
 
         public pnlSignUp(Form1 form1)
         {
 
             form = form1;
+            erori = new List<string>();
+            controllerClient = new ControllerClient();
+            pnlLogin = new pnlLogin(form);
 
             this.form.Size = new System.Drawing.Size(1205, 758);
             this.Size = new System.Drawing.Size(1200, 625);
@@ -163,12 +172,77 @@ namespace Courses.Panel_uri
         {
 
 
+            this.form.removepnl("pnlSignUp");
+            this.form.Controls.Add(new pnlHome(this.form, -1));
+
 
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void errors()
         {
 
+            erori.Clear();
+
+            if (txtemail.Text.Equals(""))
+            {
+                erori.Add("You have not entered the email");
+            }
+
+            if (txtpassword.Text.Equals(""))
+            {
+                erori.Add("You have not entered the password");
+            }
+
+            if (txtFisrtname.Text.Equals(""))
+            {
+                erori.Add("You have not entered the first name");
+            }
+
+            if (txtLastName.Text.Equals(""))
+            {
+                erori.Add("You have not entered the last name");
+            }
+
+
+        }
+
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            errors();
+
+            if (erori.Count > 0)
+            {
+                for (int i = 0; i < erori.Count; i++)
+                {
+                    MessageBox.Show(erori[i], "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+
+
+                int id = controllerClient.generareId();
+                string name = txtFisrtname.Text + " " + txtLastName.Text;
+                string password = txtpassword.Text;
+                string email = txtemail.Text;
+
+
+                string textul = id.ToString() + "⁂" + name + "⁂" + password + "⁂" + email;
+
+                controllerClient.save(textul);
+
+                controllerClient.load();
+
+                this.pnlLogin.lblName.Text = name;
+                this.pnlLogin.lblName.Visible = true;
+                this.pnlLogin.linkSignIn.Visible = false;
+                this.form.removepnl("pnlLogin");
+                this.form.Controls.Add(pnlLogin);
+                this.form.removepnl("pnlSignUp");
+                this.form.Controls.Add(new pnlHome(form,id));
+
+            }
 
         }
 

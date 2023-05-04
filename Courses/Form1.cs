@@ -17,7 +17,7 @@ namespace Courses
         {
             InitializeComponent();
 
-            this.Controls.Add(new pnlSignIn(this));
+            this.Controls.Add(new pnlHome(this,-1));
             this.Controls.Add(new pnlLogin(this));
 
         }

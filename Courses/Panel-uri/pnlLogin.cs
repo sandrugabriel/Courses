@@ -107,7 +107,7 @@ namespace Courses.Panel_uri
             this.form.removepnl("pnlSignIn");
             this.form.removepnl("pnlView");
             this.form.removepnl("pnlAddCourse");
-            this.form.Controls.Add(new pnlHome(form,form.id));
+            this.form.Controls.Add(new pnlSignIn(form));
 
         }
 

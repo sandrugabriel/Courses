@@ -62,57 +62,6 @@ namespace Courses.Controllers
             return courses;
         }
 
-        public int pozID(int id)
-        {
-
-            for (int i = 0; i < courses.Count; i++)
-            {
-                if (courses[i].getid() == id)
-                {
-                    return i;
-                }
-            }
-
-            return -1;
-        }
-
-        public string stergere(int id)
-        {
-            string t = "";
-            
-            for (int i = 0; i < courses.Count-1; i++)
-            {
-                t += courses[i].toSave() + "\n";
-            }
-
-
-            return t;
-            
-        }
-
-        public void deleteCourese(int id)
-        {
-
-            string path = Application.StartupPath + @"/data/courses.txt";
-            StreamWriter stream = new StreamWriter(path);
-
-            stream.Write(this.stergere(id));
-
-            stream.Close();
-        }
-
-        public void addCourse(string textul)
-        {
-            Course sters = courses[courses.Count - 1];
-            deleteCourese(2);
-            string text = textul;
-            string path = Application.StartupPath + @"/data/courses.txt";
-            File.AppendAllText(path, text + "\n");
-            File.AppendAllText(path, sters.toSave() + "\n");
-
-
-        }
-
         public Course getById(int id)
         {
 

@@ -179,7 +179,7 @@ namespace Courses.Panel_uri
             // ⁂
             string textul = id.ToString() + "⁂" + idClient.ToString() + "⁂" + name + "⁂" + description + "⁂" + time + "⁂" + materials;
 
-            controllerCourses.addCourse(textul);
+           // controllerCourses.addCourse(textul);
             this.form.removepnl("pnlAddCourse");
             this.form.Controls.Add(new pnlHome(form, form.id));
 

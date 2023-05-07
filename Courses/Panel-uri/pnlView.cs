@@ -23,32 +23,40 @@ namespace Courses.Panel_uri
         Label lblmaterials;
         RichTextBox txtMaterials;
         Button btnDelete;
-        Button btnUpdate;
+        Button btnAdd;
         Button btnReturn;
 
         Form1 form;
 
         ControllerClient controllerClient;
         ControllerCourses controllerCourses;
+        ControllerEnrolment controllerEnrolment;
 
         pnlLogin pnlLogin;
 
         Label lblvisibe;
 
         Course course;
+        private int id1;
 
         public pnlView(Course course1, Form1 form1)
         {
             course = course1;
             form = form1;
+           
             // this.form.MinimumSize = new Size(1187, 882);
             this.form.StartPosition = FormStartPosition.CenterParent;
             //this.form.MaximizeSize = new Size();
 
             controllerClient = new ControllerClient();
             controllerCourses = new ControllerCourses();
+            controllerEnrolment = new ControllerEnrolment();
             pnlLogin = new pnlLogin(form);
 
+            id1 = new int();
+            id1 = pnlLogin.id;
+          //  MessageBox.Show(id1.ToString());
+           // MessageBox.Show(course.getid().ToString());
             this.Location = new System.Drawing.Point(120, 95);
             this.Size = new System.Drawing.Size(1387, 762);
             this.Name = "pnlView";
@@ -63,13 +71,13 @@ namespace Courses.Panel_uri
             this.txtTime = new TextBox();
             this.lblmaterials = new Label();
             this.txtMaterials = new RichTextBox();
-            this.btnUpdate = new Button();
+            this.btnAdd = new Button();
             this.btnDelete = new Button();
             this.btnReturn = new Button();
             this.lblvisibe = new Label();
 
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtMaterials);
             this.Controls.Add(this.lblmaterials);
@@ -145,13 +153,12 @@ namespace Courses.Panel_uri
             this.txtMaterials.Text = course.getMaterials();
             this.txtMaterials.ReadOnly = true;
 
-            // btnUpdate
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
-            this.btnUpdate.Location = new System.Drawing.Point(26, 24);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(161, 55);
-            this.btnUpdate.Text = "Update Course";
-            this.btnUpdate.Click += new EventHandler(btnUpdate_Click);
+            // btnAdd
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
+            this.btnAdd.Location = new System.Drawing.Point(26, 24);
+            this.btnAdd.Size = new System.Drawing.Size(161, 55);
+            this.btnAdd.Text = "Add Course";
+            this.btnAdd.Click += new EventHandler(btnAdd_Click);
 
             // btnDelete
             this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10.8F, System.Drawing.FontStyle.Regular);
@@ -182,31 +189,51 @@ namespace Courses.Panel_uri
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (course.getid() == pnlLogin.id)
+            //MessageBox.Show("id student: " + id1.ToString() + "   id course " + course.getid()); 
+            //MessageBox.Show(controllerEnrolment.verification(id1, course.getid()).ToString());
+            if (controllerEnrolment.verification(id1, course.getid()) == true)
             {
+                MessageBox.Show("You are already enrolled in the course!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.form.removepnl("pnlView");
+                this.form.Controls.Add(new pnlHome(form, id1));
+                return;
+            }
 
-            }
-            else
+            if (controllerEnrolment.verification(id1, course.getid()) == false)
             {
-                MessageBox.Show("You do not have permission to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("You signed up for course " + course.getName(), "Congratulated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int id = controllerEnrolment.generareId();
+                int idStudent = pnlLogin.id;
+                int idCours = course.getid();
+                DateTime dateTime = DateTime.Now;
+                string textul = id.ToString() + ";" + idStudent.ToString() + ";" + idCours.ToString() + ";" + dateTime.ToString();
+                controllerEnrolment.addEnrolment(textul);
+                this.form.removepnl("pnlView");
+                this.form.Controls.Add(new pnlHome(form, id1));
+                return;
             }
+
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-
-            if (course.getid() == pnlLogin.id)
+            if(controllerEnrolment.verification(id1,course.getid())==true)
             {
-
+                MessageBox.Show("You are no longer part of the " + course.getName() + " course", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int id = controllerEnrolment.getIdEnrol(id1,course.getid());
+                controllerEnrolment.deleteEnrolments(id);
+                this.form.removepnl("pnlView");
+                this.form.Controls.Add(new pnlHome(form,id1));
+                return;
             }
             else
             {
-                MessageBox.Show("You do not have permission to delete", "Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show("You are not enrolled in this course","Error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
 
 

@@ -19,9 +19,9 @@ namespace Courses
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-          //  ControllerCourses controllerCourses = new ControllerCourses();
-         //   MessageBox.Show(controllerCourses.stergere(2));
-          //  controllerCourses.deleteCourese(2);
+          // ControllerEnrolment controllerEnrolment = new ControllerEnrolment();
+           
+          // controllerEnrolment.afisare();
         }
     }
 }

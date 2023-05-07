@@ -22,8 +22,7 @@ namespace Courses
             this.MinimumSize = new Size(1700, 900);
             this.MaximumSize = new Size(1700, 900);
 
-            this.Controls.Add(new pnlHome(this,-1));
-            this.Controls.Add(new pnlLogin(this));
+            this.Controls.Add(new pnlSignIn(this));
         }
 
         public void removepnl(string text)

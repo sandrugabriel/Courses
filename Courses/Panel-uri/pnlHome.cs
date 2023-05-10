@@ -51,7 +51,7 @@ namespace Courses.Panel_uri
             foreach (Course course in courses)
             {
                 ct++;
-                pnlCard pnlcard = new pnlCard(form,course);
+                pnlCard pnlcard = new pnlCard(form,course,id);
                 pnlcard.Location = new System.Drawing.Point(x, y);
                 this.Controls.Add(pnlcard);
 

@@ -18,7 +18,6 @@ namespace Courses.Panel_uri
         public LinkLabel linkSignUp;
         public LinkLabel linkSignIn;
         public LinkLabel linkSignOut;
-        public LinkLabel linkSeeCourses;
 
         public int id;
 
@@ -40,22 +39,12 @@ namespace Courses.Panel_uri
             this.linkSignIn = new LinkLabel();
             this.lblName = new Label();
             this.linkSignOut = new LinkLabel();
-            this.linkSeeCourses = new LinkLabel();
 
             this.Controls.Add(this.linkSignIn);
             this.Controls.Add(this.linkSignUp);
             this.Controls.Add(this.lblTitlu);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.linkSeeCourses);
             this.Controls.Add(linkSignOut);
-
-            // linksignin
-            this.linkSeeCourses.AutoSize = true;
-            this.linkSeeCourses.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 13.8F, System.Drawing.FontStyle.Regular);
-            this.linkSeeCourses.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkSeeCourses.Location = new System.Drawing.Point(1350, dim);
-            this.linkSeeCourses.Text = "Enrolled courses";
-            this.linkSeeCourses.Click += new EventHandler(linkSeeCourses_Click);
 
             // linksignin
             this.linkSignIn.AutoSize = true;
@@ -103,18 +92,6 @@ namespace Courses.Panel_uri
 
         }
 
-        private void linkSeeCourses_Click(object sender, EventArgs e)
-        {
-            this.linkSeeCourses.Visible = false;
-
-            this.form.removepnl("pnlHome");
-            this.form.removepnl("pnlSignUp");
-            this.form.removepnl("pnlSignIn");
-            this.form.removepnl("pnlView");
-            this.form.removepnl("pnlAddCourse");
-            this.form.Controls.Add(new pnlSignIn(form));
-
-        }
 
 
         private void linkSignOut_Click(object sender, EventArgs e)
@@ -130,6 +107,7 @@ namespace Courses.Panel_uri
             this.form.removepnl("pnlHome");
             this.form.removepnl("pnlSignUp");
             this.form.removepnl("pnlSignIn");
+            this.form.removepnl("pnlLogin");
             this.form.removepnl("pnlView");
             this.form.removepnl("pnlAddCourse");
             this.form.Controls.Add(new pnlSignIn(form));

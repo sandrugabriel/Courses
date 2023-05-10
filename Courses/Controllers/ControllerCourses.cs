@@ -62,6 +62,16 @@ namespace Courses.Controllers
             return courses;
         }
 
+        public List<Course> getMyCourses(int id)
+        {
+            List<Course> list = new List<Course>(); 
+
+            for(int i = 0;i < courses.Count;i++)
+                if (courses[i].getid_Client() == id) list.Add(courses[i]);
+
+            return list;
+        }
+
         public Course getById(int id)
         {
 

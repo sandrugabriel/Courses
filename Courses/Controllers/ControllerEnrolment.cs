@@ -43,6 +43,18 @@ namespace Courses.Controllers
             streamReader.Close();
         }
 
+        public List<int> getMyCoursesId(int idClient)
+        {
+            List<int> courses = new List<int>();    
+            for(int i=0;i<enrolments.Count;i++)
+            {
+                if (enrolments[i].getstudentid() == idClient)
+                    courses.Add(enrolments[i].getcourseid());
+            }
+
+            return courses;
+        }
+
         public void afisare()
         {
 

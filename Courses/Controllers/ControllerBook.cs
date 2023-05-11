@@ -42,7 +42,18 @@ namespace Courses.Controllers
 
         }
 
+        public List<Book> getmybooks(int idStudent)
+        {
+            List<Book> list = new List<Book>();
 
+            for(int i=0;i<books.Count;i++)
+            {
+                if (books[i].getStudentId()==idStudent)
+                    list.Add(books[i]);
+            }
+
+            return list;
+        }
 
 
     }

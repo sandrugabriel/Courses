@@ -11,15 +11,15 @@ namespace Courses.Panel_uri
     internal class pnlUpdate:Panel
     {
 
-        Course course;
+        Book book;
 
 
 
 
-        public pnlUpdate(Course course1)
+        public pnlUpdate(Book book1)
         {
 
-            course = course1;
+            book = book1;
 
 
 

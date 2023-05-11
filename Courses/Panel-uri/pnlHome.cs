@@ -22,6 +22,7 @@ namespace Courses.Panel_uri
         ControllerCourses controllerCourses;
 
         LinkLabel linkSeeCourses;
+        LinkLabel linkMyBooks;
 
         private int id;
 
@@ -39,10 +40,11 @@ namespace Courses.Panel_uri
             this.Name = "pnlHome";
 
             this.linkSeeCourses = new LinkLabel();
+            this.linkMyBooks = new LinkLabel();
 
             // linkSee
             this.linkSeeCourses.AutoSize = true;
-            this.linkSeeCourses.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 17.8F, System.Drawing.FontStyle.Regular);
+            this.linkSeeCourses.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15, System.Drawing.FontStyle.Regular);
             this.linkSeeCourses.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkSeeCourses.ForeColor = System.Drawing.Color.Black;
             this.linkSeeCourses.Location = new System.Drawing.Point(1000, 0);
@@ -50,11 +52,33 @@ namespace Courses.Panel_uri
             this.linkSeeCourses.BringToFront();
             this.linkSeeCourses.Click += new EventHandler(linkSeeCourses_Click);
 
+            //linkMyBooks
+            this.linkMyBooks.AutoSize = true;
+            this.linkMyBooks.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15, FontStyle.Regular);
+            this.linkMyBooks.LinkBehavior = LinkBehavior.NeverUnderline;
+            this.linkMyBooks.Location = new Point(870, 0);
+            this.linkMyBooks.Text = "My books";
+            this.linkMyBooks.Click += new EventHandler(linkMyBooks_Click);
+
             courses = controllerCourses.getcourses();
 
             createCard(3);
             this.linkSeeCourses.BringToFront();
         }
+
+        private void linkMyBooks_Click(object sender, EventArgs e)
+        {
+
+            this.form.removepnl("pnlHome");
+            this.form.removepnl("pnlSignUp");
+            this.form.removepnl("pnlSignIn");
+            this.form.removepnl("pnlView");
+            this.form.removepnl("pnlAddCourse");
+            this.linkMyBooks.Visible = false;
+           
+
+        }
+
 
         private void linkSeeCourses_Click(object sender, EventArgs e)
         {
@@ -75,6 +99,7 @@ namespace Courses.Panel_uri
               this.Controls.Clear();
 
             this.Controls.Add(this.linkSeeCourses);
+            this.Controls.Add(this.linkMyBooks);
             int x = 10, y = 43, ct = 0;
 
             foreach (Course course in courses)

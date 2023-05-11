@@ -75,10 +75,9 @@ namespace Courses.Panel_uri
             this.form.removepnl("pnlView");
             this.form.removepnl("pnlAddCourse");
             this.linkMyBooks.Visible = false;
-           
+            this.form.Controls.Add(new pnlMyBooks(form,id));
 
         }
-
 
         private void linkSeeCourses_Click(object sender, EventArgs e)
         {
